@@ -7,13 +7,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var loginTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        loginTF.returnKeyType = .continue
+        passwordTF.returnKeyType = .done
+        
+        loginTF.delegate = self
+        passwordTF.delegate = self
     }
-
+    
+    //MARK: -   UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+        
+         return true
+    }
 
 }
 
